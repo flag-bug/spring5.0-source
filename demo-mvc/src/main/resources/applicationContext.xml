@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.2.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+ 
+ 
+     <!-- 配置组件扫描器，使用注解方式开发,不用配置service --> 
+     <!--<context:component-scan base-package="cn.own"/>-->
+	<bean id="user" class="cn.own.bean.User">
+		<property name="id" value="1"/>
+		<property name="name" value="lili"/>
+		<property name="list">
+			<list>
+				<value>zhangsan</value>
+				<value>wangwu</value>
+			</list>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="1" value="sfd"></entry>
+				<entry key="12" value="ssfs"></entry>
+			</map>
+		</property>
+		<property name="role" ref="role"/>
+	</bean>
+	<bean id="role" class="cn.own.bean.Role">
+		<property name="name" value="wangba"/>
+		<property name="authority" value="admin"/>
+	</bean>
+	 
+	 <!-- 引入数据库信息外部文件.properties -->
+    <!--<context:property-placeholder location="classpath:db.properties"></context:property-placeholder>-->
+       
+    <!-- 数据源 -->
+    <!--<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>-->
+     
+    <!-- 配置session工厂,spring管理mybatis -->
+    <!--<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		&lt;!&ndash; 关联数据库信息 &ndash;&gt;
+        <property name="dataSource" ref="dataSource"/>
+		&lt;!&ndash;关联加载mybatis的核心配置文件&ndash;&gt;
+        <property name="configLocation" value="classpath:sqlMapConfig.xml"/>
+        &lt;!&ndash;<property name="mapperLocations" value="classpath:mapper/*.xml"/>&ndash;&gt;
+		&lt;!&ndash; 分页插件 &ndash;&gt;
+		<property name="plugins">
+        <array>
+            &lt;!&ndash; 传入插件的对象 &ndash;&gt;
+            <bean class="com.github.pagehelper.PageInterceptor">
+                <property name="properties">
+                    <props>
+                        <prop key="helperDialect">mysql</prop>
+                        <prop key="reasonable">true</prop>
+                    </props>
+                </property>
+            </bean>
+        </array>
+    </property>
+    </bean>-->
+	
+	<!-- spring管理dao和sql映射文件关联关系 -->
+    <!--<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+            &lt;!&ndash;扫描dao包路径&ndash;&gt;
+            <property name="basePackage" value="com.spmvc.dao"></property>
+            <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>-->
+     
+    <!-- 事务管理器 -->
+    <!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>-->
+	<!-- 开启事务注解驱动 -->
+    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
+     
+    <!-- 配置AOP通知 -->
+    <!--<tx:advice id="txAdvice" transaction-manager="transactionManager">
+        &lt;!&ndash; 配置事务属性 &ndash;&gt;
+        <tx:attributes>
+            &lt;!&ndash; 添加事务管理的方法 &ndash;&gt;
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <tx:method name="delete*" propagation="REQUIRED"/>
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <tx:method name="select*" read-only="true"/>
+        </tx:attributes>
+     </tx:advice>-->
+      
+     <!-- 配置AOP，为添加事务管理的操作配置AOP -->
+    <!--<aop:config>
+        &lt;!&ndash; 引入的Spring定义的事务通知，需要使用aop:advisor &ndash;&gt;
+        <aop:advisor advice-ref="txAdvice"
+            pointcut="execution(* cn.edu.aynu.rjxy.service.*.*(..))"
+        />
+    </aop:config>-->
+ 
+</beans>

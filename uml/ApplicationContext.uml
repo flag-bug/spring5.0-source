@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.springframework.context.ApplicationContext</OriginalElement>
+  <nodes>
+    <node x="20.0" y="0.0">java.lang.FunctionalInterface</node>
+    <node x="774.0" y="80.0">org.springframework.beans.factory.HierarchicalBeanFactory</node>
+    <node x="403.00000000000006" y="0.0">org.springframework.core.io.ResourceLoader</node>
+    <node x="981.0" y="80.0">org.springframework.core.env.EnvironmentCapable</node>
+    <node x="709.6750000000001" y="0.0">org.springframework.beans.factory.BeanFactory</node>
+    <node x="0.0" y="80.0">org.springframework.context.ApplicationEventPublisher</node>
+    <node x="378.00000000000006" y="80.0">org.springframework.core.io.support.ResourcePatternResolver</node>
+    <node x="495.00000000000006" y="170.0">org.springframework.context.ApplicationContext</node>
+    <node x="591.0" y="80.0">org.springframework.beans.factory.ListableBeanFactory</node>
+    <node x="217.00000000000006" y="80.0">org.springframework.context.MessageSource</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.springframework.context.ApplicationContext" target="org.springframework.core.env.EnvironmentCapable">
+      <point x="65.41666666666663" y="-15.0" />
+      <point x="638.9166666666667" y="150.0" />
+      <point x="1065.0" y="150.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.core.io.support.ResourcePatternResolver" target="org.springframework.core.io.ResourceLoader">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.context.ApplicationContext" target="org.springframework.beans.factory.HierarchicalBeanFactory">
+      <point x="39.25" y="-15.0" />
+      <point x="612.75" y="140.0" />
+      <point x="867.5" y="140.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.beans.factory.HierarchicalBeanFactory" target="org.springframework.beans.factory.BeanFactory">
+      <point x="0.0" y="-15.0" />
+      <point x="867.5" y="55.0" />
+      <point x="798.9250000000001" y="55.0" />
+      <point x="29.75" y="15.0" />
+    </edge>
+    <edge source="org.springframework.context.ApplicationContext" target="org.springframework.context.ApplicationEventPublisher">
+      <point x="-65.41666666666669" y="-15.0" />
+      <point x="508.08333333333337" y="150.0" />
+      <point x="98.5" y="150.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.context.ApplicationContext" target="org.springframework.context.MessageSource">
+      <point x="-39.25" y="-15.0" />
+      <point x="534.25" y="140.0" />
+      <point x="287.50000000000006" y="140.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.context.ApplicationContext" target="org.springframework.beans.factory.ListableBeanFactory">
+      <point x="13.083333333333371" y="-15.0" />
+      <point x="586.5833333333335" y="130.0" />
+      <point x="672.5" y="130.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.beans.factory.ListableBeanFactory" target="org.springframework.beans.factory.BeanFactory">
+      <point x="5.6843418860808015E-14" y="-15.0" />
+      <point x="672.5000000000001" y="55.0" />
+      <point x="739.4250000000001" y="55.0" />
+      <point x="-29.75" y="15.0" />
+    </edge>
+    <edge source="org.springframework.context.ApplicationEventPublisher" target="java.lang.FunctionalInterface">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.springframework.context.ApplicationContext" target="org.springframework.core.io.support.ResourcePatternResolver">
+      <point x="-13.083333333333371" y="-15.0" />
+      <point x="560.4166666666667" y="130.0" />
+      <point x="474.50000000000006" y="130.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="557.5" y="134.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
